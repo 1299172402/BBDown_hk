@@ -240,7 +240,7 @@ namespace BBDown
             bool copyRight = jDoc.RootElement.GetProperty("data").GetProperty("copyright").GetInt32() == 2;
             if (copyRight)
             {
-                api = $"https://api.bilibili.com/x/web-interface/view?aid={avid}";
+                api = $"https://1735831202235667.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/bililimit.LATEST/removelimit/x/web-interface/view?aid={avid}";
                 json = await GetWebSourceAsync(api);
                 using var infoJson = JsonDocument.Parse(json);
                 var data = infoJson.RootElement.GetProperty("data");

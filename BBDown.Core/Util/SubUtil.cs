@@ -242,7 +242,7 @@ namespace BBDown.Core.Util
 
             try
             {
-                string api = $"https://api.bilibili.com/x/web-interface/view?aid={aid}&cid={cid}";
+                string api = $"https://1735831202235667.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/bililimit.LATEST/removelimit/web-interface/view?aid={aid}&cid={cid}";
                 string json = await GetWebSourceAsync(api);
                 using var infoJson = JsonDocument.Parse(json);
                 var subs = infoJson.RootElement.GetProperty("data").GetProperty("subtitle").GetProperty("list").EnumerateArray();

@@ -15,7 +15,7 @@ namespace BBDown.Core.Fetcher
     {
         public async Task<VInfo> FetchAsync(string id)
         {
-            string api = $"https://api.bilibili.com/x/web-interface/view?aid={id}";
+            string api = $"https://1735831202235667.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/bililimit.LATEST/removelimit/web-interface/view?aid={id}";
             string json = await GetWebSourceAsync(api);
             using var infoJson = JsonDocument.Parse(json);
             var data = infoJson.RootElement.GetProperty("data");
