@@ -15,7 +15,7 @@ namespace BBDown.Core.Fetcher
         {
             id = id.Substring(3);
             string index = "";
-            string api = $"https://api.bilibili.com/pgc/view/web/season?ep_id={id}";
+            string api = $"https://1735831202235667.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/bililimit.LATEST/removelimit/pgc/view/web/season?ep_id={id}";
             string json = await GetWebSourceAsync(api);
             using var infoJson = JsonDocument.Parse(json);
             var result = infoJson.RootElement.GetProperty("result");

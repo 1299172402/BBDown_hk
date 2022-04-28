@@ -15,8 +15,8 @@ namespace BBDown.Core
 {
     class AppHelper
     {
-        private static string API = "https://grpc.biliapi.net/bilibili.app.playurl.v1.PlayURL/PlayView";
-        private static string API2 = "https://app.bilibili.com/bilibili.pgc.gateway.player.v1.PlayURL/PlayView";
+        private static string API = "https://1735831202235667.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/bililimit.LATEST/removelimit/bilibili.app.playurl.v1.PlayURL/PlayView";
+        private static string API2 = "https://1735831202235667.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/bililimit.LATEST/removelimit/bilibili.pgc.gateway.player.v1.PlayURL/PlayView";
         private static string dalvikVer = "2.1.0";
         private static string osVer = "11";
         private static string brand = "M2012K11AC";
@@ -68,6 +68,9 @@ namespace BBDown.Core
                 {
                     body = GetPayload(Convert.ToInt64(epId), Convert.ToInt64(cid), Convert.ToInt64(qn), onlyAvc ? PlayViewReq.CodeType.Code264 : PlayViewReq.CodeType.Code265);
                     data = await GetPostResponseAsync(API2, body, headers);
+                    LogDebug("开始API2");
+                    LogDebug(ConvertToString(data));
+                    LogDebug("结束API2");
                     resp = ReadMessage<PlayViewReply>(data);
                 }
                 else
