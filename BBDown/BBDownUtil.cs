@@ -338,6 +338,11 @@ namespace BBDown
             }
             else
             {
+                if (Regex.IsMatch(url, ".*\\.akamaized\\.net"))
+                {
+                    LogDebug("将akam(upos-hz-mirrorakam.akamaized.net)的UPOS服务器替换为ks3(upos-sz-mirrorks3.bilivideo.com)服务器");
+                    return url.Replace("upos-hz-mirrorakam.akamaized.net", "upos-sz-mirrorks3.bilivideo.com");
+                }
                 LogDebug("将https更改为http");
                 return url.Replace("https:", "http:");
             }
